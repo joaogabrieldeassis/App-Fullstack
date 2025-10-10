@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Api/" />
+  <Folder Name="/Domain/">
+    <Project Path="Domain/Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="Infraestructure/Infraestructure.csproj" Id="6c599912-6347-457a-8982-413e9f9bc9cc" />
+  </Folder>
+</Solution>
