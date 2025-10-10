@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/Api/" />
+  <Folder Name="/Api/">
+    <Project Path="Api/Api.csproj" Id="ef2dfe55-14a8-44cd-b53b-614955ce4a51" />
+  </Folder>
   <Folder Name="/Domain/">
     <Project Path="Domain/Domain.csproj" />
   </Folder>

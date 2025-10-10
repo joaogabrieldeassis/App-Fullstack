@@ -2,6 +2,14 @@
 
 public class Product : Entity
 {
+    public Product(string name, decimal price, string description)
+    {
+        Name = name;
+        Price = price;
+        Description = description;
+        CreateDate = DateTime.UtcNow;
+    }
+
     public string Name { get; private set; } = string.Empty;
     public decimal Price { get; private set; }
     public string Description { get; private set; } = string.Empty;
