@@ -18,7 +18,7 @@ public class ProductMapping : IEntityTypeConfiguration<Product>
             .IsRequired()
             .HasColumnType("decimal(18,2)");
 
-        builder.Property(x => x.CreationDate)
+        builder.Property(x => x.CreateDate)
             .IsRequired()
             .HasColumnType("datetime");
 

@@ -1,8 +1,13 @@
 ﻿namespace Domain.Entities;
 
-public class Entity
+public abstract class Entity
 {
-    public Guid Id { get; protected set; }
+    protected Entity()
+    {
+        Id = Guid.NewGuid();
+    }
+
+    public Guid Id { get; private set; }
     public DateTime CreateDate { get; protected set; }
     public DateTime UpdateDate { get; protected set; }
 }

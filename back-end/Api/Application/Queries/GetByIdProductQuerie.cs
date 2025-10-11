@@ -12,11 +12,9 @@ public class GetByIdProductQuerie(ProductContext context) : IRequestHandler<GetB
 
     public async Task<ProductDto?> Handle(GetByIdProductQuerieCommand request, CancellationToken cancellationToken)
     {
-        var id = request.Id;
-        var sql = $"SELECT Id, Name, Price FROM Products WHERE Id = {id}";
-
-        return await _context.Database
-                     .SqlQuery<ProductDto?>($"{sql}") 
+        return await _context.Products
+                     .Where(p => p.Id == request.Id)
+                     .Select(p => new ProductDto(p.Id, p.Name, p.Price, p.Description))
                      .FirstOrDefaultAsync(cancellationToken);
     }
 }

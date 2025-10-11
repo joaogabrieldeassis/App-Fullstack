@@ -1,3 +1,3 @@
 ﻿namespace Api.Application.Dtos;
 
-public record ProductDto(string Name, decimal Price, string Description);
+public record ProductDto(Guid Id, string Name, decimal Price, string Description);

@@ -8,4 +8,7 @@
   <Folder Name="/Infrastructure/">
     <Project Path="Infraestructure/Infraestructure.csproj" Id="6c599912-6347-457a-8982-413e9f9bc9cc" />
   </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Test/Test.csproj" Id="ccf4f257-7dff-4f33-84f5-ae9a058e3abc" />
+  </Folder>
 </Solution>
