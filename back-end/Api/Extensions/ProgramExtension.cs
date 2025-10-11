@@ -5,12 +5,12 @@ using Api.Application.Queries;
 using Api.Application.Queries.Commands;
 using Domain.Entities;
 using Domain.Interfaces.Notifications;
+using Domain.Interfaces.Repositories;
 using Domain.Notifications;
 using Infraestructure.Context;
+using Infraestructure.Repositories;
 using MediatR;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace Api.Extensions;
 
@@ -33,6 +33,7 @@ public static class ProgramExtension
         services.AddScoped<IRequestHandler<GetByIdProductQuerieCommand, ProductDto?>, GetByIdProductQuerie>();
         services.AddScoped<IRequestHandler<GetAllProductQuerieCommand, IEnumerable<ProductDto>>, GetAllProductQuerie>();
         services.AddScoped<INotifier, Notifier>();
+        services.AddScoped<IProductRepository, ProductRepository>();
 
         return services;
     }

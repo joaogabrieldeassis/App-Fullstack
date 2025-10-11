@@ -46,7 +46,6 @@ x64/
 *.v2
 *.vsidx
 *.bin
-# Visual C++ cache files
 ipch/
 v18/
 *.aps
@@ -55,41 +54,30 @@ v18/
 *.sdf
 *.cachefile
 
-# Visual Studio profiler
 *.psess
 *.vsp
 *.vspx
 
-# Guidance Automation Toolkit
 *.gpState
 
-# ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
-# Click-Once directory
 publish/
 
-# Publish Web Output
 *.Publish.xml
 *.pubxml
 *.azurePubxml
 
-# NuGet Packages Directory
-## TODO: If you have NuGet Package Restore enabled, uncomment the next line
 packages/
-## TODO: If the tool you use requires repositories.config, also uncomment the next line
 !packages/repositories.config
 
-# Windows Azure Build Output
 csx/
 *.build.csdef
 
-# Windows Store app package directory
 AppPackages/
 
-# Others
 sql/
 *.Cache
 ClientBin/
@@ -102,35 +90,53 @@ ClientBin/
 
 *.publishsettings
 
-# RIA/Silverlight projects
 Generated_Code/
 
-# Backup & report files from converting an old project file to a newer
-# Visual Studio version. Backup files are not needed, because we have git ;-)
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
-# SQL Server files
 App_Data/*.mdf
 App_Data/*.ldf
 
-# =========================
-# Windows detritus
-# =========================
-
-# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
-# Folder config file
 Desktop.ini
 
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Mac desktop service store files
 .DS_Store
 
-_NCrunch*
+/front-end/product/dist
+/front-end/product/tmp
+/out-tsc
+/bazel-out
+/.angular/cache
+
+/front-end/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+/front-end/product/.vscode
+.vscode/
+/front-end/product/.angular
+.env
+.env.*
+
+*.log
+*.swp
+*.swo
+*.swn
+*.bak
+*.DS_Store
+Thumbs.db

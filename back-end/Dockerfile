@@ -10,6 +10,7 @@ WORKDIR /src
 COPY . .
 
 RUN dotnet build "Api/Api.csproj"
+RUN dotnet test
 
 FROM build AS publish
 RUN dotnet publish "Api/Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
