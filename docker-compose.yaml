@@ -1,7 +1,7 @@
 version: "3.4"
 
 services:
-  catalog-api:
+  product-api:
     build:
       context: back-end
       dockerfile: Dockerfile
@@ -9,10 +9,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - DbServer=sqlserver
-      - DbPort=1433
-      - Password=1q2w3e4r@#$
     expose:
       - "80"
     ports:
-      - "7003:80"
+      - "7135:80"
