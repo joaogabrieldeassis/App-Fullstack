@@ -1,14 +1,15 @@
 import { Component, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../product-service';
 import { RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Product } from '../models/product'
 
 @Component({
   standalone: true,
   selector: 'app-create-product',
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, ReactiveFormsModule],
   templateUrl: './create-product.component.html',
   styleUrl: './create-product.component.css'
 })

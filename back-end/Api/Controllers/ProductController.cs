@@ -17,14 +17,14 @@ public class ProductController(IMediator mediator,
     public async Task<IActionResult> GetAllAsync()
     {
         var products = await _mediator.Send(new GetAllProductQuerieCommand());
-        return CustomReponse(products);
+        return Ok(products);
     }
 
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetByIdAsync(Guid id)
     {
         var product = await _mediator.Send(new GetByIdProductQuerieCommand(id));
-        return CustomReponse(product);
+        return Ok(product);
     }
 
     [HttpPost]

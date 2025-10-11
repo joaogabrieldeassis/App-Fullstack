@@ -1,14 +1,19 @@
 import { Routes } from '@angular/router';
 import { CreateProductComponent } from './product/create-product/create-product.component';
-import { DeletedProductComponent } from './product/deleted-product/deleted-product.component';
-import { ListProductIdComponent } from './product/list-product-id/list-product-id.component';
 import { ListProductsComponent } from './product/list-products/list-products.component';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { ProductResolve } from './product/product-service.resolve';
 
 export const routes: Routes = [
-    { path: 'products', component: ListProductsComponent },
-    { path: 'products/create', component: CreateProductComponent },
-    { path: 'products/delete/:id', component: DeletedProductComponent },
-    { path: 'products/:id', component: ListProductIdComponent },
-    { path: 'products/update/:id', component: UpdateProductComponent },
+    {
+        path: '', component: ListProductsComponent
+    },
+    { path: 'product/create', component: CreateProductComponent },
+    {
+        path: 'product/update/:id',
+        component: UpdateProductComponent,
+        resolve: {
+            product: ProductResolve
+        },
+    },
 ];

@@ -20,6 +20,11 @@ if (!app.Environment.IsDevelopment())
 
 app.CreateDataForTest();
 
+app.UseCors(x => x
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
+
 app.UseAuthorization();
 
 app.MapControllers();

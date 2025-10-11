@@ -1,12 +1,28 @@
-<h2>Create Product</h2>
-<form (ngSubmit)="saveProduct()">
-    <label>Name:</label>
-    <input type="text" [(ngModel)]="product.name" name="name" required /><br />
-    <label>Preço:</label>
-    <input type="text" [(ngModel)]="product.price" name="code" required /><br />
-    <label>Category:</label>
-    <input type="text" [(ngModel)]="product.category" name="category" /><br />
-    <label>Price:</label>
-    <input type="number" [(ngModel)]="product.price" name="price" /><br />
-    <button type="submit">Create</button>
+<h2>Criar Produto</h2>
+<form [formGroup]="form" (ngSubmit)="saveProduct()">
+    <div class="form-group">
+        <label for="name">Nome:</label>
+        <input id="name" type="text" class="form-control" formControlName="name" />
+        <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="text-danger">
+            O campo Nome é obrigatório.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Preço:</label>
+        <input id="price" type="number" class="form-control" formControlName="price" />
+        <div *ngIf="form.get('price')?.invalid && form.get('price')?.touched" class="text-danger">
+            O campo Preço é obrigatório.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Descrição:</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+        <div *ngIf="form.get('description')?.invalid && form.get('description')?.touched" class="text-danger">
+           O campo Descrição é obrigatório.
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Create</button>
 </form>
