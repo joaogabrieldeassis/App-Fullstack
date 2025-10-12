@@ -19,7 +19,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProductService } from '../product-service';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from '../models/product';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { FloatLabelModule } from 'primeng/floatlabel';
 
@@ -56,7 +56,9 @@ export class CreateProductComponent {
 
   constructor(private productService: ProductService,
     private _formBuilder: UntypedFormBuilder,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private messageService: MessageService,
+    private router: Router) {
 
     this.form = this._formBuilder.group({
       name: ['', Validators.required],
@@ -80,15 +82,30 @@ export class CreateProductComponent {
   }
 
   processarSucesso(response: any) {
-    this.supportNgForm.resetForm();
-    this.toastr.success('Produto cadastrado com sucesso!', 'Sucesso!');
+    this.supportNgForm.reset();
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Sucesso',
+      detail: 'Produto cadastrado com sucesso!'
+    });
+
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 2000);
   }
 
   processarFalha(fail: any) {
-    this.toastr.error('Ocorreu um erro!', 'Opa :(');
+    let todasMensagens = '';
+    fail.error.errors.forEach((errorMessage: string) => {
+      todasMensagens += errorMessage + '\n';
+      this.toastr.error(errorMessage, '');
+    });
 
-    fail.error.errors.forEach((errorMesage: string) => {
-      this.toastr.error(`${errorMesage}`, '');
+    todasMensagens = todasMensagens.trim();
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Erro',
+      detail: todasMensagens
     });
   }
 
