@@ -60,9 +60,9 @@ export class CreateProductComponent {
 
     this.form = this._formBuilder.group({
       name: ['', Validators.required],
-      price: ['', [Validators.required]],
+      price: [null, [Validators.required]],
       description: ['', [Validators.required]],
-      quantity: ['', Validators.required]
+      quantity: [null, Validators.required]
     });
   }
 

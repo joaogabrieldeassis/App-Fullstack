@@ -1,5 +1,5 @@
 <div class="flex justify-center items-center min-h-screen">
-  <div class="bg-white rounded-2xl p-6 w-[550px] shadow-xl border border-gray-200">
+    <div class="bg-white rounded-2xl p-6 w-[550px] shadow-xl border border-gray-200">
         <h2 class="text-lg font-semibold mb-4">Product Details</h2>
 
         <form [formGroup]="form" (ngSubmit)="saveProduct()" class="space-y-4">
@@ -15,7 +15,8 @@
 
             <div>
                 <label class="block font-bold mb-2">Preço</label>
-                <p-inputnumber formControlName="price" mode="currency" currency="BRL" locale="pt-BR" fluid />
+                <p-inputNumber formControlName="price" [mode]="'currency'" currency="BRL" locale="pt-BR"
+                    [minFractionDigits]="2" [maxFractionDigits]="2" fluid></p-inputNumber>
             </div>
 
             <div>
@@ -25,7 +26,8 @@
 
             <div class="flex justify-end gap-2 mt-4">
                 <p-button label="Voltar" icon="pi pi-times" text [routerLink]="['/']" />
-            <p-button type="submit" label="Salvar" icon="pi pi-check" />
+                <p-button type="submit" label="Salvar" icon="pi pi-check" [disabled]="form.invalid" />
+
             </div>
         </form>
     </div>
