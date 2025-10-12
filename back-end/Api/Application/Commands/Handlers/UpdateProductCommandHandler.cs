@@ -19,7 +19,7 @@ public class UpdateProductCommandHandler(ProductContext context, INotifier notif
             return;
         }
 
-        product.Update(request.Name, request.Price, request.Description);
+        product.Update(request.Name, request.Price, request.Description, request.Quantity);
         if (!TheEntityIsValid(new ProductValidation(), product)) return;
 
         await _context.SaveChangesAsync(cancellationToken);

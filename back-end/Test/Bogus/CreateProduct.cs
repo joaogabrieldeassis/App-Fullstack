@@ -11,7 +11,8 @@ public static class CreateProduct
             .CustomInstantiator(f => new Product(
                 name: f.Commerce.ProductName(),
                 price: f.Random.Decimal(10, 2000), 
-                description: f.Commerce.ProductDescription()
+                description: f.Commerce.ProductDescription(),
+                quantity: 8
             ));
 
         return faker.Generate(quantity);
@@ -23,7 +24,8 @@ public static class CreateProduct
             .CustomInstantiator(f => new Product(
                 name: string.Empty,
                 price: 0, 
-                description: f.Commerce.ProductDescription()
+                description: f.Commerce.ProductDescription(),
+                quantity: 2
             ));
 
         return faker.Generate(quantity);

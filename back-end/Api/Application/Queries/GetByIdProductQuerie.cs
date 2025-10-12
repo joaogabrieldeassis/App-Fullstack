@@ -17,6 +17,7 @@ public class GetByIdProductQuerie(IProductRepository repository) : IRequestHandl
         return new ProductDto(product.Id,
                               product.Name,
                               product.Price,
-                              product.Description);
+                              product.Description,
+                              product.Quantity);
     }
 }

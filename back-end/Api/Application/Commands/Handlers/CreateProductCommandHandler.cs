@@ -15,7 +15,8 @@ public class CreateProductCommandHandler(ProductContext context,
     {
         var product = new Product(request.Name,
                                   request.Price,
-                                  request.Description);
+                                  request.Description,
+                                  request.Quantity);
 
         if (!TheEntityIsValid(new ProductValidation(), product)) return null;
 

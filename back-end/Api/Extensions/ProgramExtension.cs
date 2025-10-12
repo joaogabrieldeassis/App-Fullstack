@@ -64,8 +64,8 @@ public static class ProgramExtension
         {
             context.Products.AddRange(
             [
-                new Product("Camisa", 109.50m, "Camiseta Peruana fabricada no Peru"),
-                new Product("Tênis", 229.89m, "Tênis para esportes"),
+                new Product("Camisa", 109.50m, "Camiseta Peruana fabricada no Peru", 8),
+                new Product("Tênis", 229.89m, "Tênis para esportes", 3),
             ]);
 
             context.SaveChanges();

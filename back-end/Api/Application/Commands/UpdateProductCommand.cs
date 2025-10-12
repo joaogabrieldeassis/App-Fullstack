@@ -2,4 +2,4 @@
 
 namespace Api.Application.Commands;
 
-public record UpdateProductCommand(Guid Id, string Name, decimal Price, string Description) : IRequest;
+public record UpdateProductCommand(Guid Id, string Name, decimal Price, string Description, int Quantity) : IRequest;

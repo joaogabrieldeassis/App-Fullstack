@@ -109,8 +109,8 @@ $RECYCLE.BIN/
 
 .DS_Store
 
-/front-end/product/dist
-/front-end/product/tmp
+/front-end/dist
+/front-end/tmp
 /out-tsc
 /bazel-out
 /.angular/cache
@@ -127,9 +127,9 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-/front-end/product/.vscode
+/front-end/.vscode
 .vscode/
-/front-end/product/.angular
+/front-end/.angular
 .env
 .env.*
 

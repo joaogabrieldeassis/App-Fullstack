@@ -13,6 +13,6 @@ public class GetAllProductQuerie(IProductRepository repository) : IRequestHandle
     {
         var products = await _repository.GetAllAsync();
 
-        return products.Select(p => new ProductDto(p.Id, p.Name, p.Price, p.Description));
+        return products.Select(p => new ProductDto(p.Id, p.Name, p.Price, p.Description, p.Quantity));
     }
 }
