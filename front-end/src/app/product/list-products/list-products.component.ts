@@ -44,12 +44,6 @@ export class ListProductsComponent implements OnInit {
 
   ngOnInit() {
     this.loadProducts();
-    this.cols = [
-      { field: 'code', header: 'Code' },
-      { field: 'name', header: 'Name' },
-      { field: 'category', header: 'Category' },
-      { field: 'price', header: 'Price' }
-    ];
   }
 
   loadProducts() {
@@ -65,18 +59,31 @@ export class ListProductsComponent implements OnInit {
 
   deleteProduct(product: Product) {
     this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + product.name + '?',
-      header: 'Confirm',
+      message: 'Tem certeza de que deseja excluir ' + product.name + '?',
+      header: 'Confirmação',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.products.set(this.products().filter((val) => val.id !== product.id));
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Product Deleted',
-          life: 3000
-        });
+        this.productService.deleteProduct(product.id)
+          .subscribe(
+            success => {
+              this.products.update(list => list.filter(p => p.id !== product.id));
+              this.messageService.add({
+                severity: 'success',
+                summary: 'Sucesso',
+                detail: 'Produto excluído',
+                life: 3000
+              });
+            },
+            falha => {
+              this.messageService.add({
+                severity: 'error',
+                summary: 'Erro',
+                detail: 'Houve uma falha interna ao deletar o produto.'
+              });
+            }
+          )
       }
     });
   }
+
 }
