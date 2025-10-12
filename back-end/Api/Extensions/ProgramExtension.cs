@@ -2,7 +2,7 @@
 using Api.Application.Commands.Handlers;
 using Api.Application.Dtos;
 using Api.Application.Queries;
-using Api.Application.Queries.Commands;
+using Api.Application.Queries.Dtos;
 using Domain.Entities;
 using Domain.Interfaces.Notifications;
 using Domain.Interfaces.Repositories;

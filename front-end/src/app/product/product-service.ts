@@ -24,6 +24,10 @@ export class ProductService {
         return this.httpClient.post<Product>(environment.apiUrl + 'Product/', product);
     }
 
+    updateProduct(product: Product): Observable<Product> {
+        return this.httpClient.put<Product>(environment.apiUrl + 'Product/', product);
+    }
+
     deleteProduct(id: string): Observable<boolean> {
         return this.httpClient.delete<boolean>(environment.apiUrl + 'Product/' + id);
     }

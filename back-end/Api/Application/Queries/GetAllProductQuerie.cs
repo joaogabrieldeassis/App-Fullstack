@@ -1,5 +1,5 @@
 ﻿using Api.Application.Dtos;
-using Api.Application.Queries.Commands;
+using Api.Application.Queries.Dtos;
 using Domain.Interfaces.Repositories;
 using MediatR;
 

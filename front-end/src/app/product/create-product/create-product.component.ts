@@ -107,5 +107,4 @@ export class CreateProductComponent {
       detail: todasMensagens
     });
   }
-
 }

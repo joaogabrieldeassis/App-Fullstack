@@ -11,7 +11,10 @@ public class ProductRepository(ProductContext context) : IProductRepository
 
     public async Task<IEnumerable<Product>> GetAllAsync()
     {
-        return await _context.Products.AsNoTracking().ToListAsync();
+        return await _context.Products
+                             .AsNoTracking()
+                             .OrderBy(x => x.Name)
+                             .ToListAsync();
     }
 
     public async Task<Product?> GetByIdAsync(Guid id)

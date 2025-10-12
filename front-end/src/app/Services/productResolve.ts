@@ -3,7 +3,10 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { ProductService } from '../product/product-service';
 
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
+
 export class ProductResolve {
 
     constructor(private productService: ProductService) { }

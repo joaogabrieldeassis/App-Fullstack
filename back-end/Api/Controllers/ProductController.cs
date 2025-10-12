@@ -1,5 +1,5 @@
 using Api.Application.Commands;
-using Api.Application.Queries.Commands;
+using Api.Application.Queries.Dtos;
 using Domain.Interfaces.Notifications;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

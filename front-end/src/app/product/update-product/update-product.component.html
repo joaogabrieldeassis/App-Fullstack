@@ -1,1 +1,36 @@
-<p>update-product works!</p>
+<div class="flex justify-center items-center min-h-screen">
+    <div class="bg-white rounded-2xl p-6 w-[550px] shadow-xl border border-gray-200">
+        <h2 class="text-lg font-semibold mb-4">Product Details</h2>
+
+        <form [formGroup]="form" (ngSubmit)="saveProduct()" class="space-y-4" #supportNgForm="ngForm">
+            <div>
+                <label class="block font-bold mb-2">Nome</label>
+                <input type="text" pInputText formControlName="name" class="w-full" />
+            </div>
+
+            <div>
+                <label class="block font-bold mb-2">Descrição</label>
+                <textarea pTextarea formControlName="description" class="w-full"></textarea>
+            </div>
+
+            <div>
+                <label class="block font-bold mb-2">Preço</label>
+                <p-inputNumber formControlName="price" [mode]="'currency'" currency="BRL" locale="pt-BR"
+                    [minFractionDigits]="2" [maxFractionDigits]="2" fluid></p-inputNumber>
+            </div>
+
+            <div>
+                <label class="block font-bold mb-2">Quantidade</label>
+                <p-inputnumber formControlName="quantity" fluid />
+            </div>
+
+            <div class="flex justify-end gap-2 mt-4">
+                <p-button label="Voltar" text [routerLink]="['/']" />
+                <p-button type="submit" label="Salvar" icon="pi pi-check" [disabled]="form.invalid" />
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<p-toast></p-toast>
