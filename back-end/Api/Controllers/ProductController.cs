@@ -30,8 +30,8 @@ public class ProductController(IMediator mediator,
     [HttpPost]
     public async Task<IActionResult> PostAsync(CreateProductCommand command)
     {
-        var productId = await _mediator.Send(command);
-        return CustomReponse(productId);
+        await _mediator.Send(command);
+        return CustomReponse();
     }
 
     [HttpPut]

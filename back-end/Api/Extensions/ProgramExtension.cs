@@ -27,7 +27,7 @@ public static class ProgramExtension
 
     private static IServiceCollection ResolveDepenciInjection(this IServiceCollection services)
     {
-        services.AddScoped<IRequestHandler<CreateProductCommand, Guid?>, CreateProductCommandHandler>();
+        services.AddScoped<IRequestHandler<CreateProductCommand>, CreateProductCommandHandler>();
         services.AddScoped<IRequestHandler<UpdateProductCommand>, UpdateProductCommandHandler>();
         services.AddScoped<IRequestHandler<DeleteProductCommand>, DeleteProductCommandHandler>();
         services.AddScoped<IRequestHandler<GetByIdProductQuerieCommand, ProductDto?>, GetByIdProductQuerie>();

@@ -18,6 +18,7 @@ public class GetByIdProductQuerie(IProductRepository repository) : IRequestHandl
                               product.Name,
                               product.Price,
                               product.Description,
-                              product.Quantity);
+                              product.Quantity,
+                              product.CreateDate);
     }
 }
