@@ -46,9 +46,12 @@ http://localhost:5156/swagger/index.html
 - .NET 10
     - ASP.NET WebApi
     - Entity Framework Core
+    
 - Teste
    - xUnit
    - Bogus
+
+- Banco de dados em memória
    
 - Componentes / Serviços
     - FluentValidator
