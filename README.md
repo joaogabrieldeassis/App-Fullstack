@@ -4,7 +4,7 @@
 Você pode executar o projeto em qualquer sistema operacional. **Certifique-se de que o Docker está instalado e rodando no seu ambiente
 ** ([Get Docker Installation](https://docs.docker.com/get-docker/))
 
-Clone o repositório e navegue até a pasta raiz /App-Fullstack, e então execute:
+Clone o repositório e navegue até a pasta raiz /App-Fullstack, e via cmd execute:
 
 ```
 docker compose up -d
@@ -16,7 +16,7 @@ Front-end http://localhost:4200/
 Back-end http://localhost:5156/swagger/index.html
 ## Caso você não tenha o docker instalado siga esses passos:
 
-Para rodar o front-end entre na pasta /App-Fullstack/front-end e execute:
+Para rodar o front-end entre na pasta /App-Fullstack/front-end e via cmd execute:
 ```
 npm install 
 ```
@@ -28,7 +28,7 @@ Logo após isso você podera acessar a aplicação na seguinte url:
 
 http://localhost:4200/
 
-Para rodar a aplicação back-end entre na pasta /App-Fullstack/back-end e execute:
+Para rodar a aplicação back-end entre na pasta /App-Fullstack/back-end e via cmd execute:
 ```
 dotnet run
 ```
