@@ -129,6 +129,8 @@ yarn-error.log
 *.sublime-workspace
 /front-end/.vscode
 .vscode/
+.vs/
+/back-end/.vs
 /front-end/.angular
 .env
 .env.*
